@@ -11,32 +11,10 @@ import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import ChevronLeftIcon from 'material-ui-icons/ChevronLeft';
 import {List, ListItem, ListItemIcon, ListItemText} from 'material-ui/List';
-import ArrowBackIcon from 'material-ui-icons/ArrowBack';
-import NotificationIcon from 'material-ui-icons/Notifications';
-import NoteAdd from 'material-ui-icons/NoteAdd';
-import SpeakerNotes from 'material-ui-icons/SpeakerNotes';
-import ViewModule from 'material-ui-icons/ViewModule';
-import PermIdentity from 'material-ui-icons/PermIdentity';
-import ViewList from 'material-ui-icons/ViewList';
+import LoginIcon from 'material-ui-icons/PermIdentity';
 import HomeIcon from 'material-ui-icons/Home';
-import Person from 'material-ui-icons/Person';
-import People from 'material-ui-icons/People';
-import Reorder from 'material-ui-icons/Reorder';
-import Restaurant from 'material-ui-icons/Restaurant';
-import RestaurantMenu from 'material-ui-icons/RestaurantMenu';
-
-import FreeBreakfast from 'material-ui-icons/FreeBreakfast';
-import School from 'material-ui-icons/School';
-import LocalLibrary from 'material-ui-icons/LocalLibrary';
-import ContentPaste from 'material-ui-icons/ContentPaste';
-import Class from 'material-ui-icons/Class';
-
-
-import EventNoteIcon from 'material-ui-icons/EventNote';
+import DashboardIcon from 'material-ui-icons/Dashboard';
 import {Link} from 'react-router-dom';
-import ExpandLess from 'material-ui-icons/ExpandLess';
-import ExpandMore from 'material-ui-icons/ExpandMore';
-import Collapse from 'material-ui/transitions/Collapse';
 import Main from '../Main';
 
 
@@ -198,19 +176,30 @@ class App extends React.Component {
 
             <div style={{color: 'white'}}>
 
-                <ListItem button>
+                <Link to="/login"><ListItem button>
                     <ListItemIcon className={classes.Icon1}>
-                        <PermIdentity />
+                        <LoginIcon/>
                     </ListItemIcon>
                     <div className={classes.Text}>Login</div>
                 </ListItem>
+                </Link>
 
-                <ListItem button>
-                    <ListItemIcon className={classes.Icon1}>
-                        <HomeIcon  />
-                    </ListItemIcon>
-                    <div className={classes.Text}>Home</div>
-                </ListItem>
+                <Link to="/dashboard">
+                    <ListItem button>
+                        <ListItemIcon className={classes.Icon1}>
+                            <DashboardIcon/>
+                        </ListItemIcon>
+                        <div className={classes.Text}>Dashboard</div>
+                    </ListItem>
+                </Link>
+                <Link to="/fundamental">
+                    <ListItem button>
+                        <ListItemIcon className={classes.Icon1}>
+                            <HomeIcon/>
+                        </ListItemIcon>
+                        <div className={classes.Text}>Fundamental</div>
+                    </ListItem>
+                </Link>
             </div>
         );
 
